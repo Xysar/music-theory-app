@@ -6,10 +6,15 @@ function Nav() {
       <nav className="navigation-bar">
         <ul className="navigation-list">
           <li className="nav-button">
-            <a href="#">Note Identification</a>
+            <a href="/">Note Identification</a>
           </li>
-          <li className="nav-button">Scale Reference</li>
-          <li className="nav-button">Chord Identification</li>
+          <li className="nav-button">
+            <a href="scales">Scale Reference</a>
+          </li>
+          <li className="nav-button">
+            {" "}
+            <a href="chords">Chord Identification</a>
+          </li>
         </ul>
       </nav>
     </div>

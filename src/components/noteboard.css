@@ -1,0 +1,10 @@
+.note-board {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10px;
+}
+.note-board > button {
+  width: 60px;
+  height: 60px;
+  font-size: 20px;
+}

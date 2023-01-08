@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./noteboard.css";
 function Noteboard({ handleClick }) {
   return (
     <div className="note-board">
