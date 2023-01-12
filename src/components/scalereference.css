@@ -19,10 +19,16 @@
 
 .toggle-buttons {
   height: 75px;
+  width: 150px;
   font-size: 24px;
+  border-radius: 10px;
   cursor: pointer;
 }
+.pentatonic-button {
+  background: black;
+  color: white;
+}
 .blues-button {
-  background: grey;
-  border-radius: 10px;
+  background: navy;
+  color: white;
 }

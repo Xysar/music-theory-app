@@ -7,7 +7,9 @@ import React, { useRef, useEffect } from "react";
 function ScaleReferencePage() {
   let fretCoordinates = [];
   let addValue = 60;
-  const currentKey = useRef(0);
+  const currentKey = useRef(7);
+  const showBlues = useRef(true);
+  const showOnlyPenta = useRef(false);
 
   const noteLetters = [
     "F",
@@ -56,6 +58,25 @@ function ScaleReferencePage() {
       curXOffset += curAddValue;
     }
   }, []);
+
+  const toggleBlues = () => {
+    showBlues.current = !showBlues.current;
+    let bluesButton = document.getElementsByClassName("blues-button")[0];
+    if (showBlues.current) {
+      bluesButton.style.backgroundColor = "#000080";
+    } else {
+      bluesButton.style.backgroundColor = "#000000";
+    }
+  };
+  const togglePentatonic = () => {
+    showOnlyPenta.current = !showOnlyPenta.current;
+    let pentaButton = document.getElementsByClassName("pentatonic-button")[0];
+    if (showOnlyPenta.current) {
+      pentaButton.style.backgroundColor = "#800000";
+    } else {
+      pentaButton.style.backgroundColor = "#000000";
+    }
+  };
 
   const createFretNote = (x, y, xOffset, yOffset) => {
     return {
@@ -151,8 +172,15 @@ function ScaleReferencePage() {
           } else if (majorScale[transposedNoteValue] === "P") {
             ctx.fillStyle = "#800000";
           } else if (majorScale[transposedNoteValue] === "B") {
-            ctx.fillStyle = "#000080";
+            if (showBlues.current) {
+              ctx.fillStyle = "#000080";
+            } else {
+              continue;
+            }
           } else {
+            if (showOnlyPenta.current) {
+              continue;
+            }
             ctx.fillStyle = "#000000";
           }
 
@@ -204,10 +232,22 @@ function ScaleReferencePage() {
       <Canvas draw={draw} />
       <div className="toolbox">
         {" "}
-        <button className="toggle-buttons pentatonic-button">
+        <button
+          className="toggle-buttons pentatonic-button"
+          onClick={() => {
+            togglePentatonic();
+          }}
+        >
           Pentatonic Only
         </button>
-        <button className="toggle-buttons blues-button">Blues Notes</button>
+        <button
+          className="toggle-buttons blues-button"
+          onClick={() => {
+            toggleBlues();
+          }}
+        >
+          Blues Notes
+        </button>
         <NoteBoard handleClick={handleNotePress} />
       </div>
     </div>
