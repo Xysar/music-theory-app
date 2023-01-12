@@ -1,5 +1,6 @@
 import Nav from "./Nav";
 import Canvas from "./Canvas";
+import NoteBoard from "./Noteboard";
 import "./scalereference.css";
 import React, { useRef, useEffect } from "react";
 
@@ -66,8 +67,9 @@ function ScaleReferencePage() {
     };
   };
 
-  const FretNumToLetter = (fretNum) => {};
-
+  const handleNotePress = (noteValue) => {
+    currentKey.current = noteValue;
+  };
   const getNoteValue = (x, y) => {
     let value = 0;
     // eslint-disable-next-line default-case
@@ -126,24 +128,29 @@ function ScaleReferencePage() {
     ctx.fillText(count, 985, 325);
     ctx.stroke();
     ctx.closePath();
-    ctx.fillStyle = "red";
 
+    //scale logic
     if (fretCoordinates[0]) {
       for (let i = 0; i < 21; i++) {
         for (let j = 0; j < 6; j++) {
           let curNoteValue = fretCoordinates[i][j].note;
-          curNoteValue = (curNoteValue + currentKey.current) % 12;
+          let transposedNoteValue = 0;
+          if (curNoteValue - currentKey.current < 0) {
+            transposedNoteValue = 12 + (curNoteValue - currentKey.current);
+          } else {
+            transposedNoteValue = curNoteValue - currentKey.current;
+          }
 
-          if (majorScale[curNoteValue] === "N") {
+          if (majorScale[transposedNoteValue] === "N") {
             continue;
           }
           ctx.beginPath();
 
-          if (majorScale[curNoteValue] === "R") {
+          if (majorScale[transposedNoteValue] === "R") {
             ctx.fillStyle = "#FFA500";
-          } else if (majorScale[curNoteValue] === "P") {
+          } else if (majorScale[transposedNoteValue] === "P") {
             ctx.fillStyle = "#800000";
-          } else if (majorScale[curNoteValue] === "B") {
+          } else if (majorScale[transposedNoteValue] === "B") {
             ctx.fillStyle = "#000080";
           } else {
             ctx.fillStyle = "#000000";
@@ -195,6 +202,14 @@ function ScaleReferencePage() {
     <div className="scale-container">
       <Nav />
       <Canvas draw={draw} />
+      <div className="toolbox">
+        {" "}
+        <button className="toggle-buttons pentatonic-button">
+          Pentatonic Only
+        </button>
+        <button className="toggle-buttons blues-button">Blues Notes</button>
+        <NoteBoard handleClick={handleNotePress} />
+      </div>
     </div>
   );
 }

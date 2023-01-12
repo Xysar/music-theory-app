@@ -10,3 +10,19 @@
   height: 325px;
   width: 1010px;
 }
+
+.toolbox {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.toggle-buttons {
+  height: 75px;
+  font-size: 24px;
+  cursor: pointer;
+}
+.blues-button {
+  background: grey;
+  border-radius: 10px;
+}

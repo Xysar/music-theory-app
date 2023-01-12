@@ -15,7 +15,6 @@ function NoteIdentityPage() {
     let curXOffset = 77.5;
     for (let i = 0; i < 12; i++) {
       fretCoordinates[i] = [];
-
       for (let j = 0; j < 6; j++) {
         let curYOffset = 25 + j * 30;
         fretCoordinates[i][j] = createFretNote(i, j, curXOffset, curYOffset);
