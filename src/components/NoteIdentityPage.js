@@ -89,7 +89,7 @@ function NoteIdentityPage() {
     ctx.strokeStyle = "#999999";
     let curAddValue = addValue;
     let count = 1;
-    for (let i = 105; i < 650; i += curAddValue) {
+    for (let i = 105; i < 600; i += curAddValue) {
       ctx.fillText(count, i - 32, 225);
       count++;
       ctx.moveTo(i, 0);
