@@ -5,6 +5,10 @@ li {
   list-style-type: none;
 }
 
+.navigation-list {
+  display: flex;
+  gap: 10px;
+}
 .nav-container {
   background: darkred;
   padding: 50px;
@@ -12,16 +16,6 @@ li {
   display: flex;
   justify-content: center;
   font-family: Arial, Helvetica, sans-serif;
-}
-.navigation-bar {
-}
-a {
-  text-decoration: none;
-  color: white;
-}
-.navigation-list {
-  color: white;
   font-size: 24px;
-  display: flex;
-  gap: 20px;
+  color: white;
 }

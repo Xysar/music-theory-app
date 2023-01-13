@@ -3,13 +3,16 @@ import "./nav.css";
 function Nav() {
   return (
     <div className="nav-container">
-      <nav className="navigation-bar">
+      {" "}
+      <nav>
         <ul className="navigation-list">
-          <li className="nav-button">
-            <a href="/">Note Identification</a>
+          <li>
+            <a href="https://xysar.github.io/note-identification">
+              Note Identification
+            </a>
           </li>
-          <li className="nav-button">
-            <a href="scales">Scale Reference</a>
+          <li>
+            <a href="https://xysar.github.io/guitar-scales">Scale Reference</a>
           </li>
         </ul>
       </nav>
