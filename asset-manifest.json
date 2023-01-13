@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/music-theory-app/static/css/main.f3389fcf.css",
-    "main.js": "/music-theory-app/static/js/main.65b56cae.js",
-    "index.html": "/music-theory-app/index.html",
-    "main.f3389fcf.css.map": "/music-theory-app/static/css/main.f3389fcf.css.map",
-    "main.65b56cae.js.map": "/music-theory-app/static/js/main.65b56cae.js.map"
+    "main.css": "/xysar/music-theory-app/static/css/main.f3389fcf.css",
+    "main.js": "/xysar/music-theory-app/static/js/main.862c7f02.js",
+    "index.html": "/xysar/music-theory-app/index.html",
+    "main.f3389fcf.css.map": "/xysar/music-theory-app/static/css/main.f3389fcf.css.map",
+    "main.862c7f02.js.map": "/xysar/music-theory-app/static/js/main.862c7f02.js.map"
   },
   "entrypoints": [
     "static/css/main.f3389fcf.css",
-    "static/js/main.65b56cae.js"
+    "static/js/main.862c7f02.js"
   ]
 }
