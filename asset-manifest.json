@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/music-theory-app/static/css/main.f3389fcf.css",
+    "main.js": "/music-theory-app/static/js/main.6e3b2b87.js",
+    "index.html": "/music-theory-app/index.html",
+    "main.f3389fcf.css.map": "/music-theory-app/static/css/main.f3389fcf.css.map",
+    "main.6e3b2b87.js.map": "/music-theory-app/static/js/main.6e3b2b87.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f3389fcf.css",
+    "static/js/main.6e3b2b87.js"
+  ]
+}
