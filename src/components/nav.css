@@ -8,10 +8,10 @@ li {
 .nav-container {
   background: darkred;
   padding: 50px;
-  margin: 0px;
   width: 100%;
   display: flex;
   justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .navigation-bar {
 }

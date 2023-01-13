@@ -1,14 +1,14 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import NoteIdentityPage from "./components/NoteIdentityPage";
 import ScaleReferencePage from "./components/ScaleReferencePage";
 const RouteSwitch = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<NoteIdentityPage />} />
-        <Route path="/scales" element={<ScaleReferencePage />} />
+        <Route path="scales" element={<ScaleReferencePage />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
